@@ -1,0 +1,47 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.app-container {
+  background: url('./images/backdrop.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arch-container {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  background-color: transparent;
+}
+
+.arch-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 20%, #0077b6 0%, #023e8a 80%);
+  clip-path: polygon(
+    50% 0%, 60% 2%, 70% 8%, 80% 18%, 90% 30%, 
+    100% 100%, 0% 100%, 10% 30%, 20% 18%, 
+    30% 8%, 40% 2%
+  );
+  z-index: 1;
+}
+
+.centered-text {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 3rem;
+}
